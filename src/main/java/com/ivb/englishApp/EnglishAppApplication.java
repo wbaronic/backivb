@@ -15,6 +15,10 @@ import com.ivb.englishApp.domain.Phrase;
 import com.ivb.englishApp.domain.PhraseRepository;
 import com.ivb.englishApp.domain.Questao;
 import com.ivb.englishApp.domain.QuestaoRepository;
+import org.springframework.context.annotation.Bean;
+import org.modelmapper.ModelMapper;
+
+
 
 @SpringBootApplication
 public class EnglishAppApplication implements CommandLineRunner {
@@ -33,6 +37,11 @@ public class EnglishAppApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 		SpringApplication.run(EnglishAppApplication.class, args);
 	}
+	
+	  @Bean
+	    public ModelMapper getModelMapper() {
+	        return new ModelMapper();
+	    }
 
 	@Override
 	public void run(String... args) throws Exception {
